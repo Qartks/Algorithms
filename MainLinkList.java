@@ -180,7 +180,7 @@ public class MainLinkList {
 	}
 
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
+		MyLinkedList list = new MyLinkedList();
 		list.add(1);
 		list.add(2);
 		list.add(3);
@@ -193,7 +193,7 @@ public class MainLinkList {
 		list.add(10);
 		list.printList();
 		
-		LinkedList list2 = new LinkedList();
+		MyLinkedList list2 = new MyLinkedList();
 		list2.add(6);
 		list2.add(2);
 		list2.add(3);
@@ -206,10 +206,10 @@ public class MainLinkList {
 		list2.add(10);
 		list2.printList();
 		
-		LinkedList listOne = new LinkedList();
+		MyLinkedList listOne = new MyLinkedList();
 		listOne.add(11);
 		
-		LinkedList listNull = new LinkedList();
+		MyLinkedList listNull = new MyLinkedList();
 		
 		System.out.println("\nResult: \n");
 //		list.printHead();
