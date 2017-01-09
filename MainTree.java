@@ -38,6 +38,8 @@ public class MainTree {
 		return heightDiff + 1;
 	}
 
+
+
 	public static void main(String[] args) {
 		Tree tree = new Tree(1);
 		
