@@ -116,6 +116,38 @@ public class Graph {
         printSolution(weight, prev);
 
     }
+
+    void floydWarshall(int[][] graph)
+    {
+        int[][] dist = new int[V][V];
+        int k,i, j;
+
+        for (i = 0; i <dist.length ; i++) {
+            dist[i] = graph[i];
+        }
+
+        for (k = 0; k < V; k++)
+        {
+            // Pick all vertices as source one by one
+            for (i = 0; i < V; i++)
+            {
+                // Pick all vertices as destination for the
+                // above picked source
+                for (j = 0; j < V; j++)
+                {
+                    // If vertex k is on the shortest path from
+                    // i to j, then update the value of dist[i][j]
+                    if (dist[i][k] + dist[k][j] < dist[i][j])
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                }
+            }
+        }
+
+        for (i = 0; i <dist.length ; i++) {
+            System.out.println(Arrays.toString(dist[i]));
+        }
+
+    }
 	
 	void topologicalSort() {
 		Stack<Integer> s = new Stack<Integer>();
@@ -174,20 +206,31 @@ public class Graph {
 //        g.BFS(2);
 //        g.DFS(2);
 
-        Graph g = new Graph(9);
+//        Graph g = new Graph(9);
 
-        int graph[][] = new int[][]{{0, 4, 0, 0, 0, 0, 0, 8, 0},
-                {4, 0, 8, 0, 0, 0, 0, 11, 0},
-                {0, 8, 0, 7, 0, 4, 0, 0, 2},
-                {0, 0, 7, 0, 9, 14, 0, 0, 0},
-                {0, 0, 0, 9, 0, 10, 0, 0, 0},
-                {0, 0, 4, 14, 10, 0, 2, 0, 0},
-                {0, 0, 0, 0, 0, 2, 0, 1, 6},
-                {8, 11, 0, 0, 0, 0, 1, 0, 7},
-                {0, 0, 2, 0, 0, 0, 6, 7, 0}};
+//        int graph[][] = new int[][]{{0, 4, 0, 0, 0, 0, 0, 8, 0},
+//                {4, 0, 8, 0, 0, 0, 0, 11, 0},
+//                {0, 8, 0, 7, 0, 4, 0, 0, 2},
+//                {0, 0, 7, 0, 9, 14, 0, 0, 0},
+//                {0, 0, 0, 9, 0, 10, 0, 0, 0},
+//                {0, 0, 4, 14, 10, 0, 2, 0, 0},
+//                {0, 0, 0, 0, 0, 2, 0, 1, 6},
+//                {8, 11, 0, 0, 0, 0, 1, 0, 7},
+//                {0, 0, 2, 0, 0, 0, 6, 7, 0}};
+//
+//        System.out.println();
+//        g.Dijkstra(graph, 0);
 
-        System.out.println();
-        g.Dijkstra(graph, 0);
+        final int INF = 99999;
+
+        Graph g = new Graph(4);
+        int graph[][] = { {0,   5,  INF, 10},
+                {INF, 0,   3, INF},
+                {INF, INF, 0,   1},
+                {INF, INF, INF, 0}
+        };
+
+        g.floydWarshall(graph);
 		
 	}
 
