@@ -75,7 +75,7 @@ public class Graph {
         int min = Integer.MAX_VALUE, min_index=-1;
 
         for (int v = 0; v < V; v++)
-            if (sptSet[v] == false && dist[v] <= min)
+            if (!sptSet[v] && dist[v] <= min)
             {
                 min = dist[v];
                 min_index = v;
@@ -160,9 +160,9 @@ public class Graph {
 			}
 		}
 		
-		while(s.empty()==false) {
-			System.out.println(s.pop() + " ");
-		}
+		while(!s.empty()) {
+            System.out.println(s.pop() + " ");
+        }
 	}
 
 	private void topologicalSortUtil(int i, boolean[] visited, Stack<Integer> s) {
@@ -176,11 +176,44 @@ public class Graph {
 				topologicalSortUtil(v, visited, s);
 			}
 		}
-		
+
 		s.push(i);
 	}
 
-	public static void main(String[] args) {
+
+	private boolean hasCycle() {
+	    boolean[] visited = new boolean[V];
+        boolean[] recStack = new boolean[V];
+
+        for (int i = 0; i < V; i++) {
+            if (hasCycleUtil(i, visited, recStack))
+                return true;
+        }
+
+        return false;
+    }
+
+    private boolean hasCycleUtil(int i, boolean[] visited, boolean[] recStack) {
+
+	    if (!visited[i]) {
+	        visited[i] = true;
+	        recStack[i] = true;
+
+	        Iterator<Integer> it = adj[i].iterator();
+	        while (it.hasNext()) {
+	            int n = it.next();
+	            if (!visited[i] && hasCycleUtil(n, visited, recStack)) {
+	                return true;
+                } else if (recStack[n]) {
+	                return true;
+                }
+            }
+        }
+        recStack[i] = false;
+	    return false;
+    }
+
+    public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 //        Graph g = new Graph(6);

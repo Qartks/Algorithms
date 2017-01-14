@@ -1,13 +1,14 @@
 package com.algorithms.qartks;
 
 import java.util.Arrays;
+import java.util.Vector;
 
 /**
  * Created by qartks on 1/10/17.
  */
 public class BackTracking {
 
-    static int N = 10;
+    static int N = 8;
 
     static void NQueenProblem() {
         int board[][] = new int [N][N];
@@ -145,15 +146,72 @@ public class BackTracking {
         s[i] = temp;
     }
 
+    static private boolean mColor(int[][] graph, int m)
+    {
+        int[] color = new int [4];
+
+        if (mColorUtil(graph, m, color, 0)) {
+            System.out.println(Arrays.toString(color));
+            return true;
+        }
+        System.out.println("No Solutions Found!");
+        return false;
+    }
+
+    private static boolean mColorUtil(int[][] graph, int m, int[] color,  int v) {
+
+        if (v == 4) {
+            return true;
+        }
+
+        for (int c = 1; c<= m; c++) {
+            if (mColorIsSafe(graph, color, c, v)) {
+                color[v] = c;
+                if (mColorUtil(graph, m, color, v + 1)) {
+                    return true;
+                }
+                color[v] = 0;
+            }
+        }
+        return false;
+    }
+
+    private static boolean mColorIsSafe(int[][] graph, int[] color, int c, int v) {
+        for (int i = 0; i < 4; i++) {
+            if (graph[v][i] == 1 && c == color[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
 
         String s = new String("love");
         permute(s.toCharArray(), 0, s.length()-1);
 
-//        knightTour();
+        knightTour();
 
         System.out.println();
         NQueenProblem();
 
+        System.out.println("\n");
+        int graph[][] = {{0, 1, 1, 1},
+                        {1, 0, 1, 0},
+                        {1, 1, 0, 1},
+                        {1, 0, 1, 0},
+                    };
+        int m = 3;
+        mColor(graph, m);
+
+        Integer i = 12;
+        Integer j = -(~i);
+
+        System.out.println(i);
+        System.out.println(Integer.toBinaryString(i));
+        System.out.println(Integer.toBinaryString(-i));
+        System.out.println(Integer.toBinaryString(~i));
+        System.out.println(Integer.toBinaryString(j));
+        System.out.println(j);
     }
 }

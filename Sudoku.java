@@ -46,7 +46,7 @@ public class Sudoku {
         return false;
     }
 
-    static boolean UsedInCol(int grid[][], int col, int num)
+    private static boolean UsedInCol(int grid[][], int col, int num)
     {
         for (int row = 0; row < N; row++)
             if (grid[row][col] == num)
