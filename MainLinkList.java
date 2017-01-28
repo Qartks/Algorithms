@@ -179,6 +179,20 @@ public class MainLinkList {
 		}
 	}
 
+	public LinkedListNode merge(LinkedListNode node1, LinkedListNode node2) {
+		if (node1 == null)
+			return node2;
+
+		if (node2 == null)
+			return node1;
+
+		LinkedListNode result;
+
+//		if (node1.data < node2.data) {
+//		}
+		return null;
+	}
+
 	public static void main(String[] args) {
 		MyLinkedList list = new MyLinkedList();
 		list.add(1);

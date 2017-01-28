@@ -7,7 +7,7 @@ public class TreeNode {
 	TreeNode right;
 	
 	public TreeNode() {
-		this.data = -99;
+		this.data = Integer.MIN_VALUE;
 		this.left = null;
 		this.right = null;
 	}
