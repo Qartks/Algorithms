@@ -15,7 +15,7 @@ public class HeapSort {
 			int temp = arr[0];
 			arr[0] = arr[i];
 			arr[i] = temp;
-			
+
 			heapify(arr, i, 0);
 		}
 	}
