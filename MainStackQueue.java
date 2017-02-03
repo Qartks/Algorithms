@@ -15,7 +15,7 @@ public class MainStackQueue {
 //		
 //		s.print();
 		
-		Queue q = new Queue();
+		MyQueue q = new MyQueue();
 		
 		q.push(20);
 		q.push(30);

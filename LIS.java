@@ -36,7 +36,7 @@ public class LIS {
 
         for (int i = 1; i < arr.length; i++) {
             for (int j = 0; j < i; j++) {
-                if (arr[j] < arr[i] && lis[i] < lis[j] + 1) {
+                if (arr[i] > arr[j] && lis[i] < lis[j] + 1) {
                     lis[i] = lis[j] + 1;
                     prev[i] = j;
                 }
@@ -56,6 +56,6 @@ public class LIS {
         String X = "AGGTAB";
         String Y = "GXTXAYB";
 
-        longestCommonSubsequence(X, Y);
+//        longestCommonSubsequence(X, Y);
     }
 }

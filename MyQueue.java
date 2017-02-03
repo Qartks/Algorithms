@@ -1,10 +1,10 @@
 package com.algorithms.qartks;
 
-public class Queue {
+public class MyQueue {
 	
 	QueueNode top;
 	
-	public Queue() {
+	public MyQueue() {
 		this.top = null;
 	}
 	
@@ -32,7 +32,7 @@ public class Queue {
 		if (top != null) {
 			System.out.println(top.data);
 		} else {
-			System.err.println("Queue Empty, Can not peek");
+			System.err.println("MyQueue Empty, Can not peek");
 		}
 	}
 
