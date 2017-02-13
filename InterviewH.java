@@ -47,13 +47,14 @@ public class InterviewH {
 
         for (int i = 1; i < len; i++) {
             for (int j = 0; j < i; j++) {
-                if ( (i <= j + canyon.get(j)  && fly[j] != Integer.MAX_VALUE) || (j + canyon.get(j) > len) ) {
+                if (i <= j + canyon.get(j)  && fly[j] != Integer.MAX_VALUE) {
                     fly[i] = Math.min(fly[i], fly[j] + 1);
                     path[i] = j;
                 }
             }
         }
 
+        System.out.println(canyon.toString());
         if (fly[len-1] == Integer.MAX_VALUE) {
             System.out.print("failure");
             return;

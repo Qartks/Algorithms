@@ -83,6 +83,7 @@ public class BackTracking {
         } else {
             printKTSolution(sol);
         }
+        Math.min(0 , 1);
 
     }
 
