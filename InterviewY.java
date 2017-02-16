@@ -41,7 +41,7 @@ public class InterviewY {
         l1.add("C");
 
         l2.add("E");
-        l2.add("D");
+        l2.add("B");
 
         System.out.println(getRest(l1, l2));
 
