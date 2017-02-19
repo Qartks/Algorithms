@@ -31,7 +31,10 @@ public class MergeIntervals {
                 }
             });
 
+//            Collections.sort(intervals, (i1 , i2) -> i1.start - i2.start);
+
             List<Interval> result = new LinkedList<>();
+
             int start = intervals.get(0).start;
             int end = intervals.get(0).end;
 

@@ -7,6 +7,21 @@ import java.util.*;
  */
 public class InterviewY {
 
+
+    static List<String> groupAnagrams(List<String> list) {
+
+        Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                char[] s1 = o1.toCharArray();
+                char[] s2 = o2.toCharArray();
+
+                return String.valueOf(s2).compareTo(String.valueOf(s1));
+            }
+        });
+        return list;
+    }
+
     static String getRest(List<String> r1, List<String> r2) {
         Map<String, Integer> map = new HashMap<>();
 
@@ -44,6 +59,17 @@ public class InterviewY {
         l2.add("B");
 
         System.out.println(getRest(l1, l2));
+
+        List<String> list = new ArrayList<>();
+        list.add("pet");
+        list.add("dog");
+        list.add("ert");
+        list.add("etp");
+        list.add("dt");
+        list.add("tep");
+
+        System.out.println(list.toString());
+        System.out.println(groupAnagrams(list).toString());
 
     }
 }
