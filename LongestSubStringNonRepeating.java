@@ -8,34 +8,52 @@ import java.util.Map;
  */
 public class LongestSubStringNonRepeating {
 
-    static public int longestSubStringNonRepeating (String s) {
-        int result = 0;
-        if (s == null || s.length() == 0) {
-            return result;
-        } else if (s.length() == 1) {
-            return 1;
-        }
+//    private static int longestSubStringNonRepeating (String s) {
+//        int result = 0;
+//        if (s == null || s.length() == 0) {
+//            return result;
+//        } else if (s.length() == 1) {
+//            return 1;
+//        }
+//
+//        Map<Character, Integer> map = new HashMap<>();
+//        int index = 0;
+//        for (int i = 0; i < s.length(); i++) {
+//            char c = s.charAt(i);
+//            if (map.containsKey(c)) {
+//                index = Math.max(index, map.get(c));
+//            }
+//            result = Math.max(result, i - index);
+//            map.put(c, i);
+//        }
+//        System.out.println(map.toString());
+//        return result;
+//    }
+
+    private static int longestNonRepeatingSubString (String s) {
+        if (s == null || s.length() == 0) return 0;
 
         Map<Character, Integer> map = new HashMap<>();
-        int index = 0;
+        int result = 0;
+        int j = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (map.containsKey(c)) {
-                index = Math.max(index, map.get(c));
+                j = Math.max(j, map.get(c));
             }
-            result = Math.max(result, i - index);
+            result = Math.max(result, i - j);
             map.put(c, i);
         }
-        System.out.println(map.toString());
+
         return result;
     }
-
 
     public static void main(String[] args) {
 
         String s = "aabbbdefbgf";
 
-        System.out.println(longestSubStringNonRepeating(s));
+//        System.out.println(longestSubStringNonRepeating(s));
+        System.out.println(longestNonRepeatingSubString(s));
 
     }
 }

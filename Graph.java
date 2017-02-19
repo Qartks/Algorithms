@@ -224,7 +224,7 @@ public class Graph {
         g.addEdge(2, 3);
         g.addEdge(3, 1);
 
-        g.topologicalSort();
+//        g.topologicalSort();
 
 
 //        Graph g = new Graph(4);
@@ -237,7 +237,7 @@ public class Graph {
 //        g.addEdge(3, 3);
 
 //        g.BFS(2);
-//        g.DFS(2);
+        g.DFS(2);
 
 //        Graph g = new Graph(9);
 //
