@@ -48,10 +48,13 @@ public class LongestCommonPrefix {
         return true;
     }
 
+
+
     public static void main(String[] args) {
         String[] strs = {"prefix", "prefox", "prefbox", "prefsox", "prefp"};
 
         System.out.println(longestCommonPrefix(strs));
         System.out.println(longestCommonPrefixBinary(strs));
+
     }
 }

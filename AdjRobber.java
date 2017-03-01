@@ -1,5 +1,7 @@
 package com.algorithms.qartks;
 
+import sun.text.normalizer.Trie;
+
 /**
  * Created by qartks on 2/24/17.
  */
