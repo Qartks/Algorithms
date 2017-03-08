@@ -216,13 +216,13 @@ public class Graph {
     public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-        Graph g = new Graph(6);
-        g.addEdge(5, 2);
-        g.addEdge(5, 0);
-        g.addEdge(4, 0);
-        g.addEdge(4, 1);
-        g.addEdge(2, 3);
-        g.addEdge(3, 1);
+//        Graph g = new Graph(6);
+//        g.addEdge(5, 2);
+//        g.addEdge(5, 0);
+//        g.addEdge(4, 0);
+//        g.addEdge(4, 1);
+//        g.addEdge(2, 3);
+//        g.addEdge(3, 1);
 
 //        g.topologicalSort();
 
@@ -237,7 +237,7 @@ public class Graph {
 //        g.addEdge(3, 3);
 
 //        g.BFS(2);
-        g.DFS(2);
+//        g.DFS(2);
 
 //        Graph g = new Graph(9);
 //
@@ -254,16 +254,16 @@ public class Graph {
 //        System.out.println();
 //        g.Dijkstra(graph, 0);
 
-//        final int INF = 99999;
+        final int INF = 99999;
 //
-//        Graph g = new Graph(4);
-//        int graph[][] = { {0,   5,  INF, 10},
-//                {INF, 0,   3, INF},
-//                {INF, INF, 0,   1},
-//                {INF, INF, INF, 0}
-//        };
-//
-//        g.floydWarshall(graph);
+        Graph g = new Graph(4);
+        int graph[][] = { {0,   5,  INF, 10},
+                {INF, 0,   3, INF},
+                {INF, INF, 0,   1},
+                {INF, INF, INF, 0}
+        };
+
+        g.floydWarshall(graph);
 		
 	}
 
