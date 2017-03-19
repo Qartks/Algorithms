@@ -24,14 +24,14 @@ public class MergeIntervals {
 
     public class Solution {
         public List<Interval> merge(List<Interval> intervals) {
-            Collections.sort(intervals, new Comparator<Interval>() {
-                @Override
-                public int compare(Interval o1, Interval o2) {
-                    return o1.start - o2.start;
-                }
-            });
+//            Collections.sort(intervals, new Comparator<Interval>() {
+//                @Override
+//                public int compare(Interval o1, Interval o2) {
+//                    return o1.start - o2.start;
+//                }
+//            });
 
-//            Collections.sort(intervals, (i1 , i2) -> i1.start - i2.start);
+            Collections.sort(intervals, (i1 , i2) -> i1.start - i2.start);
 
             List<Interval> result = new LinkedList<>();
 

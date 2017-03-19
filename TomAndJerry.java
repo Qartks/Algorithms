@@ -13,9 +13,6 @@ public class TomAndJerry {
                         {1, 1, 2},
                         {1, 0, 0}};
 
-        List<String> urls = new ArrayList<>();
-
-        System.out.println(String.valueOf(urls.size() - 1));
 
     }
 }
