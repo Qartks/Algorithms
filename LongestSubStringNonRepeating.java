@@ -44,7 +44,6 @@ public class LongestSubStringNonRepeating {
             result = Math.max(result, i - j);
             map.put(c, i);
         }
-
         return result;
     }
 
